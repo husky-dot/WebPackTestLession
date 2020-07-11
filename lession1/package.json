@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "scripts": {
+    "bundle": "webpack" 
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
