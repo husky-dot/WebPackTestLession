@@ -1,10 +1,5 @@
-import Header from './header.js'
-import Sidebar from './sidebar.js'
-import Content from './content.js'
 
+import './index.scss'
+var dom = document.getElementById('root')
 
-
-
-new Header()
-new Content()
-new Sidebar()
+dom.innerHTML = '<div class="iconfont iconxinzeng"></div>'
