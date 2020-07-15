@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "main": "index.js",
   "scripts": {
-    "bundle": "webpack"
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server",
+    "middleware": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +25,7 @@
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^9.0.2",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }

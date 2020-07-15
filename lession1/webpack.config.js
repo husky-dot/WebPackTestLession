@@ -8,7 +8,10 @@ module.exports = {
     main: './src/index.js'
   },
   "mode": "production",
-  devtool: 'eval-cheap-module-source-map',
+  devServer: {
+    contentBase: './dist',
+    open: true
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
