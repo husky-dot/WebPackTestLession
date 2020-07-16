@@ -1,23 +1,10 @@
-const path = require('path')
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack')
+const path = require('path')
+
 module.exports = {
   entry: {
     main: './src/index.js'
-  },
-  "mode": "production",
-  devtool: 'eval-cheap-module-source-map',
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
-  },
-  devServer: {
-    contentBase: './dist',
-    open: true,
-    hot: true,
-    hotOnly: true
   },
   "module": {
     rules: [ 
@@ -31,7 +18,7 @@ module.exports = {
         options: {
           name: '[name].[ext]',
           outputPath: 'images/',
-          limit: 20480
+          limit: 204800
         }
       }
     },{
@@ -65,7 +52,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }), 
-    new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin() 
-  ]
+    new CleanWebpackPlugin()
+  ],
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist')
+  }
 }

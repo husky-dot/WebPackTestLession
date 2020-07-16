@@ -1,9 +1,3 @@
-import "@babel/polyfill";
-const arr = [
-  new Promise(() => {}),
-  new Promise(() => {})
-]
+import { add } from './main.js'
 
-arr.map(item => {
-  console.log(item)
-})
+add(1, 2)
