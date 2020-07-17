@@ -1,6 +1,7 @@
-
 const webpack = require('webpack')
-const { merge } = require('webpack-merge');
+const {
+  merge
+} = require('webpack-merge');
 const commonConfig = require('./webpack.common.js')
 
 const devConfig = {
@@ -12,8 +13,8 @@ const devConfig = {
     hot: true,
     hotOnly: true
   },
-  plugins: [ 
-    new webpack.HotModuleReplacementPlugin() 
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
   ],
   optimization: {
     usedExports: true
