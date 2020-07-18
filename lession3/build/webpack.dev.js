@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const {
   merge
 } = require('webpack-merge');
@@ -14,6 +15,7 @@ const devConfig = {
     hotOnly: true
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
   optimization: {
