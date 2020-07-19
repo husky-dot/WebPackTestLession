@@ -3,37 +3,16 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack')
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: "production",
-  entry: {
-    main: './src/index.js'
-  },
   devtool: 'cheap-module-source-map',
-  devServer: {
-    contentBase: './dist',
-    open: true,
-    hot: true,
-    hotOnly: true
-  },
-  "module": {
-    rules: [ 
-      { 
-        test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"
-      },
-      { 
-      test: /\.(jpg|png|gif)$/,
-      use: {
-        loader: 'url-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'images/',
-          limit: 204800
-        }
-      }
-    },{
+  module: {
+    rules: [{
       test: /\.scss$/,
       use: [
-        'style-loader', 
+        MiniCssExtractPlugin.loader, 
         {
           loader: 'css-loader',
           options: {
@@ -46,24 +25,14 @@ module.exports = {
     }, {
       test: /\.css$/,
       use: [
-        'style-loader', 
+        MiniCssExtractPlugin.loader, 
         'css-loader',
         'postcss-loader'
       ]
-    },{
-      test: /\.(eot|ttf|svg|woff)$/,
-      use: {
-        loader: 'file-loader'
-      }
     }]
   },
-  plugins: [ 
-    new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    }), 
-    new webpack.HotModuleReplacementPlugin() 
-  ],
-  // optimization: {
-  //   usedExports: true
-  // }
+  plugins: [new MiniCssExtractPlugin({
+    filename: '[name].css',
+    chunkFilename: '[name].chunk.css'
+  })],
 }
