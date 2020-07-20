@@ -39,6 +39,7 @@ module.exports = {
       chunks: 'all'
     }
   },
+  performance: false,
   output: {
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',

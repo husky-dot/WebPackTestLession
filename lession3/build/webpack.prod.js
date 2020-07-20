@@ -7,7 +7,6 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: "production",
-  devtool: 'cheap-module-source-map',
   module: {
     rules: [{
       test: /\.scss$/,
@@ -35,4 +34,8 @@ module.exports = {
     filename: '[name].css',
     chunkFilename: '[name].chunk.css'
   })],
+  output: {
+    filename: '[name].[contenthash].js',
+    chunkFilename: '[name].[contenthash].js'
+  }
 }
