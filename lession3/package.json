@@ -16,6 +16,10 @@
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
     "css-loader": "^3.6.0",
+<<<<<<< HEAD
+=======
+    "imports-loader": "^1.1.0",
+>>>>>>> 6eaf1a70327d66ef6d31387ed5c0134f1a7c91cf
     "jquery": "^3.5.1",
     "lodash": "^4.17.19",
     "react": "^16.13.1",
